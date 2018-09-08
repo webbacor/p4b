@@ -9,12 +9,12 @@
         <link href="public/css/style.css" rel="stylesheet" />
         <link href="https://fonts.googleapis.com/css?family=Spectral+SC" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=PT+Serif" rel="stylesheet">
-        <link rel="icon" type="image/png" href="public/img/favicon.png"/>
+        <link rel="icon" type="image/png" href="public/images/favicon.png"/>
     </head>
 
     <body>
       <header>
-      
+       <section id="barbar">      
       <nav class="navbar navbar-inverse">
        <div class="container-fluid">
          <ul id="nav-hamburger">
@@ -23,10 +23,10 @@
          <ul class="nav navbar-nav">
            <li><a href="index.php">Accueil</a></li>
            <li><a href="chapters">Chapitres</a></li>
-           <li><a href="#contact">Contact</a></li>
+           <li><a href="contact">Contact</a></li>
            <li><a href="#" data-toggle="modal" data-target="#myModal"><span class="glyphicon glyphicon-log-in"></span> Admin</a></li>
          </ul>
-
+        </section> 
          <div class="modal fade" id="myModal" role="dialog">
           <div class="modal-dialog">
 
@@ -64,11 +64,12 @@
           </div>
         </div>
        </div>
-      </nav>
-          <h1>Jean Forteroche</h1>
-          <h2>Un billet simple pour l'Alaska</h2>
-        </div>
-      </header>
+      </nav>  
+     
+   </header>
+    
+      </div>
+  
 
       <?= $content ?>
 

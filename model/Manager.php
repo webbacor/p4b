@@ -17,7 +17,7 @@ class Manager
 try {
     $dbh = new PDO('mysql:host=localhost;dbname=p4;charset=utf8', "root", "");
     foreach($dbh->query('SELECT * from admin') as $row) {
-        print_r('null');
+        print_r('');
     }
     $dbh = null;
 } catch (PDOException $e) {

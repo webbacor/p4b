@@ -44,7 +44,8 @@ class ChapterManager extends Manager
   public function getChapter($id)
   {
     $db = $this->dbConnect();
-    $req = $db->query('SELECT title, author, content, img_chapter, date_chapter FROM chapters WHERE id = ' . $id . '');
+    $req = $db->query('SELECT title, author, content, date_chapter FROM chapters WHERE id = ' . $id . '');
+     //$req = $db->query('SELECT title, author, content, img_chapter, date_chapter FROM chapters WHERE id = ' . $id . '');
     if ($req === false) {
       throw new Exception("Problème dans la requete SQL pour la fonction getChapter()");
     } else {
@@ -66,21 +67,17 @@ class ChapterManager extends Manager
     }
   }
 
-  public function createChapter($title, $content, $imgChapter)
+  public function createChapter($title, $content)
   {
-    $directory = 'C:\wamp64\www\Projet4\Projet4\public\images\\' . $imgChapter['name'] . '';
-    
-    $ok = move_uploaded_file($imgChapter['tmp_name'], $directory);
-    if ($ok) {
-      $db = $this->dbConnect();
-      $req = $db->prepare('INSERT INTO chapters(title, content, img_chapter)
-      VALUES (:title, :content, :img_chapter)');
+        $db = $this->dbConnect();
+      $req = $db->prepare('INSERT INTO chapters(title, content)
+      VALUES (:title, :content)');
       $req->bindParam(':title', $title);
       $req->bindParam(':content', $content);
-      $req->bindParam(':img_chapter', $imgChapter['name']);
+      
       $req->execute();
     }
-  }
+  
 
   public function deleteChapter($id)
   {
@@ -97,16 +94,14 @@ class ChapterManager extends Manager
       $req->bindParam(':content', $content);
       $req->execute();
     } else {
-      $directory = 'C:\wamp64\www\Projet4\Projet4\public\images\\' . $imgChapter['name'] . '';
-      $ok = move_uploaded_file($imgChapter['tmp_name'], $directory);
-      if ($ok) {
+   
         $db = $this->dbConnect();
-        $req = $db->prepare('UPDATE chapters SET title = :title, content = :content, img_chapter = :img_chapter WHERE id = ' . $id . '');
+        $req = $db->prepare('UPDATE chapters SET title = :title, content = :content, WHERE id = ' . $id . '');
         $req->bindParam(':title', $title);
         $req->bindParam(':content', $content);
-        $req->bindParam(':img_chapter', $imgChapter['name']);
+      
         $req->execute();
-      }
+      
     }
   }
 

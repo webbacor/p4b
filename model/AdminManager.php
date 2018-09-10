@@ -1,11 +1,12 @@
 <?php
 /**
- AdminManager - gestion authenfication et MP
+ *
  */
 class AdminManager extends Manager
 {
 
-  public function getLogin(){
+  public function getLogin()
+  {
     $db = $this->dbConnect();
     $req = $db->query('SELECT login_admin FROM admin');
     if ($req === false) {
@@ -17,18 +18,24 @@ class AdminManager extends Manager
     }
   }
 
-
-  public function getMp(){
-   $db = $this->dbConnect();
-    $req = $db->query('SELECT password_admin FROM admin WHERE id = 1');
+  public function getPassHash()
+  {
+    $db = $this->dbConnect();
+      
+    //$req = $db->query('SELECT login_admin, password_admin FROM admin ');
+    $req = $db->query('SELECT password_admin FROM admin');
     if ($req === false) {
-      //throw - Signale un evenement pendant l’exécution du programme.
-      throw new Exception("Problème dans la requete SQL pour la fonction getLogin()");
-    } else {
+      throw new Exception("Problème dans la requete SQL pour la fonction getPassHash()");
+    } else 
+      {
       $data = $req->fetch();
-      $getMp = $data['password_admin'];
-      return $getMp;  
-      }
+      $passHash = $data['password_admin'];
+      return $passHash;
+    }
   }
 
 }
+
+
+
+

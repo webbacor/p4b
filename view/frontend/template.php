@@ -10,6 +10,7 @@
         <link href="https://fonts.googleapis.com/css?family=Spectral+SC" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=PT+Serif" rel="stylesheet">
         <link rel="icon" type="image/png" href="public/images/favicon.png"/>
+           
     </head>
 
     <body>
@@ -27,6 +28,10 @@
            <li><a href="#" data-toggle="modal" data-target="#myModal"><span class="glyphicon glyphicon-log-in"></span> Admin</a></li>
          </ul>
         </section> 
+        <div id="title">
+          <h1>Jean Forteroche</h1>
+          <h2>"Un billet simple pour l'Alaska"</h2>
+        </div>
          <div class="modal fade" id="myModal" role="dialog">
           <div class="modal-dialog">
 
@@ -74,43 +79,10 @@
       <?= $content ?>
 
   
+<?php
 
-    <footer id="footer">
-    <div class="sigNature">
-                <img src="public/images/xl_livre.png" alt="livre footer"> <img src="public/img/signature.png" alt="signature"/> 
-    </div>
-        <br/>
-
-        
-        <button data-toggle="modal" href="#infos" class="btn btn-primary">*    Mentions Légales      *</button>
-
-        <?php 
-        require '/public/mentions.php';
-        ?>
-
-        <button data-toggle="modal" href="#infop" class="btn btn-primary">*Politique de confidentilité*</button>
-
-      <?php 
-        require '/public/pconfid.php';
-        ?>
-        
-
-
-  <dir class= "reseauxs">
-    <a href="https://www.facebook.com/"><img src="public/images/Noir/noir-facebook.png" alt="facebook" ></a>
-    <a href="https://twitter.com/login?lang=fr"><img src="public/images/Noir/noir-twitter.png" alt="twitter" ></a>
-    <a href="http://www.hellocoton.fr/connexion"><img src="public/images/Noir/noir-hellocoton.png" alt="hellocoton" ></a>
-    <a href="https://www.instagram.com/accounts/login/?hl=fr"><img src="public/images/Noir/noir-instagram.png" alt="instagram" ></a>
-    <a href="https://www.pinterest.fr/login/"><img src="public/images/Noir/noir-pinterest.png" alt="pinterest" ></a>
-    <br/>
-</dir>
-
-
-      
-        <p style="text-align:center">Coryright by Jean Forteroche. Formation DWJ Openclassroom Corinne Bailly.</p>
-
-      </footer>
-
+  require ('footer.php');
+  ?>
         <script
 			  src="https://code.jquery.com/jquery-3.2.1.min.js"
 			  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="

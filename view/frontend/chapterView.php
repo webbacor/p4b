@@ -5,13 +5,10 @@
 
   $dateFormat = new DateTime($chapter['date_chapter']);
   $dateFr = $dateFormat->format('d/m/Y');
-  //$dateFr = $dateFormat->format('d/m/Y à H:i:s');
-  echo '<div id="chapter_container">';
-  echo '<img src="public/images/' . $chapter['img_chapter'] . '" alt="" width="100%" height="50%">';
-  echo '<h2>' . $chapter['title'] . '</h2>';
+   echo '<div id="chapter_container">';
+   echo '<h2>' . $chapter['title'] . '</h2>';
   echo '<p id="p_italic"><i>Écrit le '. $dateFr . '</i></p>';
-  //echo '<p id="p_italic"><i>Écrit par ' . $chapter['author'] . ' le '. $dateFr . '</i></p>';
-  echo "<p>     " . nl2br($chapter['content']) . "</p>";
+   echo "<p>     " . nl2br($chapter['content']) . "</p>";
   echo '</div>';
 ?>
 

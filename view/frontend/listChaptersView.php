@@ -14,7 +14,7 @@
         } else {
           echo '<div class="chapters chaptersHidden">';
         }
-        echo '<img src="public/images/' . $chapter['img_chapter'] . '" alt="" width="100%" height="300px">';
+       
         echo '<h3>' . $chapter['title'] . '</h3>';
          echo '<p>Écrit par ' . $chapter['author'] .  '</p>';
        // echo '<p>Écrit par ' . $chapter['author'] . ' le '. $dateFr . '</p>';
@@ -26,12 +26,7 @@
     ?>
   </div>
   <div id="widget">
-    <!--BOUTON RECHERCHER <div id="search">
-      <input type="text" class="form-control" placeholder="Rechercher ...">
-      <button id="buttonSearch" type="button" class="btn">
-        <i class="fa fa-search" aria-hidden="true"></i>
-      </button>
-    </div>-->
+   
     
     
     <div id="about">
@@ -39,11 +34,7 @@
       <h3 style="font-weight:bold"></h3>
      
     </div>
-    <!--SUIVEZ MOI <div id="follow">
-      <h3 style="font-weight:bold">SUIVEZ MOI</h3>
-      <a href="#footer"><i class="fa fa-facebook-square fa-3x" aria-hidden="true"></i></a>
-      <a href="#footer"><i class="fa fa-twitter-square fa-3x" aria-hidden="true"></i></a>
-    </div>-->
+   
   </div>
 </div>
 

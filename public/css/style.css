@@ -41,8 +41,12 @@ header h2{
   margin-right: 0px;
 }
 .navbar {
-  background-color: #191925;
+  background-color: #047e7e;
 
+}
+#barbar li, a
+{
+  color: white;
 }
 .nav li
 {
@@ -86,6 +90,11 @@ header h2{
   max-width: 700px;
   padding-left: 20px;
   padding-right: 100px;
+}
+.chapters p
+{
+  padding-left: 5px;
+  padding-right: 5px;
 }
 #lastChapters
 {
@@ -318,14 +327,19 @@ footer
   margin: auto;
   padding: 25px;
 }
+#element{
+  background-color: white;
+}
 .comments
 {
   border: 1px solid #c4c5ca;
+  background-color: white;
   margin-top: 20px;
   margin-bottom: 20px;
   padding: 20px;
   word-wrap: break-word;
 }
+
 .date-comment
 {
   float:right;
@@ -460,4 +474,11 @@ footer
   {
     float: none;
   }
+}
+
+.modal-content{
+  background-color: white;
+  width: 80%;
+  font-family: Arial,'Spectral SC', serif;
+  border-radius: 0px;
 }

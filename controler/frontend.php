@@ -14,7 +14,7 @@ function index()
   if (isset($_POST['login']) AND $_POST['login'] === $login AND isset($_POST['pwd']) AND password_verify($_POST['pwd'], $passHash)) {
     $_SESSION['login_admin'] = $_POST['login'];
     $_SESSION['password_admin'] = $_POST['pwd'];
-    header('Location: index.php');
+    header('Location: indexadmin.php');
   } else {
     require('view/frontend/indexView.php');
   }

@@ -5,10 +5,10 @@
 
   $dateFormat = new DateTime($chapter['date_chapter']);
   $dateFr = $dateFormat->format('d/m/Y');
-   echo '<div id="chapter_container">';
-   echo '<h2>' . $chapter['title'] . '</h2>';
-  echo '<p id="p_italic"><i>Écrit le '. $dateFr . '</i></p>';
-   echo "<p>     " . nl2br($chapter['content']) . "</p>";
+  echo '<div id="chapter_container">';
+  echo '<h2>' . $chapter['title'] . '</h2>';
+  echo '<p id="p_italic"><i>Écrit le '. $dateFr . '</i></p>'; 
+  echo "<p>     " . nl2br($chapter['content']) . "</p>";
   echo '</div>';
 ?>
 
@@ -58,7 +58,7 @@
 
     foreach ($comments as $comment) {
       $dateFormat = new DateTime($comment['date_comment']);
-      $dateFr = $dateFormat->format('d/m/Y à H:i:s');
+      $dateFr = $dateFormat->format('d/m/Y ');
       echo '<div class="comments">';
       echo '<p><strong>' . htmlspecialchars($comment['name']) . '</strong> a écrit : <i class="date-comment">Le ' . $dateFr  . '</i></p>';
       echo '<br />';

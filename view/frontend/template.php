@@ -15,42 +15,48 @@
 
     <body>
       <header>
-       <section id="barbar">      
-      <nav class="navbar navbar-inverse">
-       <div class="container-fluid">
-         <ul id="nav-hamburger">
-           <li><i class="fa fa-bars fa-2x" style="color:white" aria-hidden="true"></i></li>
-         </ul>
-         <ul class="nav navbar-nav">
-           <li><a href="index.php">Accueil</a></li>
-           <li><a href="chapters">Chapitres</a></li>
-           <li><a href="contact">Contact</a></li>
-           <li><a href="#" data-toggle="modal" data-target="#myModal"><span class="glyphicon glyphicon-log-in"></span> Admin</a></li>
-         </ul>
+        <section id="barbar">      
+          <nav class="navbar navbar-inverse">
+           <div class="container-fluid">
+             <ul id="nav-hamburger">
+               <li><i class="fa fa-bars fa-2x" style="color:white" aria-hidden="true"></i></li>
+             </ul>
+
+
+             <ul class="nav navbar-nav" >
+               <li><a href="index.php" style="color:white">Accueil</a></li>
+               <li><a href="chapters" style="color:white">Chapitres</a></li>
+               <li><a href="contact" style="color:white">Contact</a></li>
+               <li><a href="#" data-toggle="modal" data-target="#myModal"></span> Admin</a></li>
+             </ul>
         </section> 
+
         <div id="title">
           <h1>Jean Forteroche</h1>
           <h2>"Un billet simple pour l'Alaska"</h2>
         </div>
+
+
+       <!-- modal boostrap connect admin-->
          <div class="modal fade" id="myModal" role="dialog">
           <div class="modal-dialog">
-
-            <!-- Modal content-->
+            
             <div class="modal-content">
               <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h4 class="modal-title">Connexion administrateur</h4>
-              </div>
-              <div class="modal-body">
+                <h4 class="modal-title w-100 font-weight-bold">Aministrateur</h4>
+            </div>
+            <div class="modal-body">
                 <form action="index.php" method="post">
                   <div class="form-group">
                     <label for="login">Identifiant:</label>
-                    <input type="text" class="form-control" placeholder="Entrez votre identifiant" name="login">
+                    <input type="text" class="form-control" placeholder="Identifiant" name="login">
                   </div>
                   <div class="form-group">
                     <label for="pwd">Mot de passe:</label>
-                    <input type="password" class="form-control" placeholder="Entrez votre mot de passe" name="pwd">
+                    <input type="password" class="form-control" placeholder="Mot de passe" name="pwd">
                   </div>
+
                   <?php
                   if (isset($_POST['login']) AND isset($_POST['pwd'])) {
                     echo '<div class="alert alert-danger alert-dismissable">
@@ -58,31 +64,35 @@
                             Identifiant ou mot de passe incorrect.
                           </div>';
                   } ?>
+
                   <button type="submit" class="btn btn-default">Connexion</button>
                 </form>
-              </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
-              </div>
+            </div>
+
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
+                </div>
             </div>
 
           </div>
-        </div>
-       </div>
-      </nav>  
-     
+        </div><!-- fin modal connect admin-->
+
+
+      </div>
+    </nav>
+          
    </header>
     
       </div>
-  
 
       <?= $content ?>
-
   
-<?php
+  <?php
 
   require ('footer.php');
   ?>
+
+   
         <script
 			  src="https://code.jquery.com/jquery-3.2.1.min.js"
 			  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
@@ -95,3 +105,4 @@
         
     </body>
 </html>
+

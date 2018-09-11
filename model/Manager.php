@@ -7,7 +7,7 @@ class Manager
     protected function dbConnect(){
         try 
         {
-            $db = new PDO('mysql:host=localhost;dbname=p4;charset=utf8', "root", "");
+            $db = new PDO('mysql:host=localhost;dbname=blogalaska;charset=utf8', "root", "");
             return $db;
         }    
         catch (PDOException $e) 

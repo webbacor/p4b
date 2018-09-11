@@ -8,15 +8,15 @@ $title= "Administration des commentaires"; ?>
   <?php
     $i = 0;
     foreach ($comments as $comment) {
-      $i++;
+      //$i++;
       $dateFormat = new DateTime($comment['date_comment']);
-      $dateFr = $dateFormat->format('d/m/Y à H:i:s');
+      $dateFr = $dateFormat->format('d/m/Y');
       if ($comment['reports'] > 0) {
-        echo '<div style="background-color:#c9302c;" class="comments">';
+        echo '<div style="background-color:#DDDFEF;" class="comments">';
       } else {
         echo '<div class="comments">';
       }
-      echo 'Écrit par <strong>' . htmlspecialchars($comment['name']) . '</strong> le ' . $dateFr;
+      echo '<strong>' . htmlspecialchars($comment['name']) . '</strong> le ' . $dateFr;
       echo '<div class="btn-comments">';
       echo '<button data-toggle="modal" data-target="#myModal' . $i . '" name="deleteComment" value=' . $comment['id'] . ' class="btn btn-default">Supprimer</button>';
       echo '<div class="modal fade" id="myModal' . $i .'" role="dialog">

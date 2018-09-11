@@ -79,6 +79,7 @@ class ChapterManager extends Manager
     }
   
 
+
   public function deleteChapter($id)
   {
     $db = $this->dbConnect();
@@ -94,12 +95,11 @@ class ChapterManager extends Manager
       $req->bindParam(':content', $content);
       $req->execute();
     } else {
-   
-        $db = $this->dbConnect();
+           $db = $this->dbConnect();
         $req = $db->prepare('UPDATE chapters SET title = :title, content = :content, WHERE id = ' . $id . '');
         $req->bindParam(':title', $title);
         $req->bindParam(':content', $content);
-      
+       // $req->bindParam(':img_chapter', $imgChapter['name']);
         $req->execute();
       
     }

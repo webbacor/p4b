@@ -9,11 +9,13 @@ require_once('controler/frontend.php');
 require_once('controler/backend.php');
 
 try {
-  //if (isset($_SESSION['login']) AND isset($_SESSION['pwd'])) {
+  if (isset($_SESSION['login']) AND isset($_SESSION['pwd'])) {
     if (isset($_GET['action'])) {
         if ($_GET['action'] == 'createChapter') {
-          if (isset($_POST['title']) AND isset($_POST['content']) AND isset($_FILES['img_chapter'])) {
-            addChapter($_POST['title'], $_POST['content'], $_FILES['img_chapter']);
+          // if (isset($_POST['title']) AND isset($_POST['content']) AND isset($_FILES['img_chapter'])) {
+          //  addChapter($_POST['title'], $_POST['content'], $_FILES['img_chapter']);
+          if (isset($_POST['title']) AND isset($_POST['content'])){
+            addChapter($_POST['title'], $_POST['content']);
           } else {
             createChapter();
           }
@@ -23,7 +25,8 @@ try {
           }
         } elseif ($_GET['action'] == 'editChapter') {
           if (isset($_POST['title']) AND isset($_POST['content'])) {
-            editChapter($_SESSION['idChapter'], $_POST['title'], $_POST['content'], $_FILES['img_chapter']);
+            //editChapter($_SESSION['idChapter'], $_POST['title'], $_POST['content'], $_FILES['img_chapter']);
+            editChapter($_SESSION['idChapter'], $_POST['title'], $_POST['content']);
           } else {
             rewriteChapter($_POST['editChapter']);
           }
@@ -47,7 +50,7 @@ try {
         } else {
           indexAdmin();
         }
-   /* } elseif (isset($_GET['action'])) {
+    } elseif (isset($_GET['action'])) {
       if ($_GET['action'] == 'chapters') {
         if (isset($_GET['id'])) {
           chapter($_GET['id']);
@@ -61,7 +64,7 @@ try {
       index();
     }
 
-*/
+
 
 } catch (Exception $e) {
   echo 'Exception reçue : ' . $e->getMessage() . '';

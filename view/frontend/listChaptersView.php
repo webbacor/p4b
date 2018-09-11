@@ -7,17 +7,17 @@
       $nbChaptersLoad = 0;
       foreach ($chapters as $chapter) {
         $dateFormat = new DateTime($chapter['date_chapter']);
-        $dateFr = $dateFormat->format('d/m/Y à H:i:s');
+        $dateFr = $dateFormat->format('d/m/Y');
         if ($nbChaptersLoad < $chaptersToLoad) {
           $nbChaptersLoad++;
           echo '<div class="chapters">';
         } else {
           echo '<div class="chapters chaptersHidden">';
         }
-       
+       // echo '<img src="public/images/' . $chapter['img_chapter'] . '" alt="" width="100%" height="300px">';
         echo '<h3>' . $chapter['title'] . '</h3>';
-         echo '<p>Écrit par ' . $chapter['author'] .  '</p>';
-       // echo '<p>Écrit par ' . $chapter['author'] . ' le '. $dateFr . '</p>';
+     
+       echo '<p>Écrit le '. $dateFr . '</p>';
         echo "<p>" . substr($chapter['content'],0,255) . "...</p>";
         echo '<a href="chapter-' . $chapter['id'] . '"><button type="button" class="btn buttonNext">Lire la suite</button></a>';
         echo '</div>';
@@ -25,8 +25,7 @@
 
     ?>
   </div>
-  <div id="widget">
-   
+    
     
     
     <div id="about">
@@ -34,7 +33,7 @@
       <h3 style="font-weight:bold"></h3>
      
     </div>
-   
+    
   </div>
 </div>
 

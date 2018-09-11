@@ -14,9 +14,15 @@ function indexAdmin()
 }
 
 
+
+
+/* Une session est une variable enregistrée sur l'ordinateur affichant la page (client), lors de la destruction d'un session tu supprimes seulement les données enregistrées du client.
+
+- La base de données est stockée sur le serveur, tes pages PHP qui en ont besoin ouvrent une connexion à celle ci directement depuis le serveur mais celles ci n'ont pas besoin d'être fermé lorsque la session client est détruite.*/
+
 function logout()
 {
-  session_unset();
+  session_unset();//met à "blanc" donc à null le tableau $_SESSION en cours. 
   header('Location: index.php');
 }
 

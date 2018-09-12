@@ -1,7 +1,7 @@
 <?php
-/**
- * acces à la base de données
- */
+//**************************************************
+//acces BASE DE DONNEES
+//*************************************************
 class Manager
 {
     protected function dbConnect(){

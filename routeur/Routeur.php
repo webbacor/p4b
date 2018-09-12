@@ -1,76 +1,74 @@
 <?php
-session_start ();
+session_start();
+ini_set("SMTP","ssl:smtp.gmail.com");
+ini_set("smtp_port","465");
+ini_set('sendmail_from', 'web.bacor@gmail.com');  
 
-include_once('controller/Frontend.php');
-include_once('controller/Backend.php');
+include_once('controler/Frontend.php');
+include_once('controler/Backend.php');
 
 class Routeur
-{/*
-private $request;
-
-private $routes = [
-"" => ["controller"=> 'Frontend', "method" => 'home'],
-"home" => ["controller"=> 'Frontend', "method" => 'home'],
-"chapterView" => ["controller"=> 'Frontend', "method" => 'chapterView'],
-"addComment" => ["controller"=> 'Frontend', "method" => 'addComment'],
-"reportComment" => ["controller"=> 'Frontend', "method" => 'reportComment'],
-"loginView" => ["controller"=> 'Frontend', "method" => 'loginView'],
-"controlLogin" => ["controller"=> 'Frontend', "method" => 'controlLogin']
-];
-
-private $routesAdmin = [
-"adminView" => ["controller"=> 'Backend', "method" => 'adminView'],
-"editChapter" => ["controller"=> 'Backend', "method" => 'editChapter'],
-"writeChapter" => ["controller"=> 'Backend', "method" => 'writeChapter'],
-"manageComments" => ["controller"=> 'Backend', "method" => 'manageComments'],
-"addChapter" => ["controller"=> 'Backend', "method" => 'addChapter'],
-"validateDelete" => ["controller"=> 'Backend', "method" => 'validateDelete'],
-"deleteChapter" => ["controller"=> 'Backend', "method" => 'deleteChapter'],
-"changeChapter" => ["controller"=> 'Backend', "method" => 'changeChapter'],
-"updateChapter" => ["controller"=> 'Backend', "method" => 'updateChapter'],
-"deleteComment" => ["controller"=> 'Backend', "method" => 'deleteComment'],
-"changeComment" => ["controller"=> 'Backend', "method" => 'changeComment'],
-"updateComment" => ["controller"=> 'Backend', "method" => 'updateComment']
-];
-
-public function __construct($request)
 {
-$this->request = $request;
-}
+		private $request;
 
-public function renderController()
-{
-$request = $this->request;
 
-try
-{
-if(key_exists($request, $this->routes))
-{
-$controller = $this->routes[$request]['controller'];
-$method = $this->routes[$request]['method'];
+		private $routes = [
+		"" =>["controler"=>'frontend',"method"=> 'index'],
+		"index" => ["controler" =>'frontend',"method"=>'index'],
+		"indexView" => ["controler" =>'frontend',"method"=>'indexView'],
+		"chapter" => ["controler" =>'frontend',"method"=>'chapter'],
+		"chapters" => ["controler" =>'frontend',"method"=>'chapters'],
+		"listChapters" => ["controler" =>'frontend',"method"=>'listChapters'],
+		"contact" => ["controler" =>'frontend',"method"=>'contact'],
+		];
 
-$currentController = new $controller();
-$currentController->$method();
-}
-elseif (key_exists($request, $this->routesAdmin))
-{
-if (isset($_SESSION['login']))
-{
-index.php
-<?php
 
-if($_GET)
-{
-$request = $_GET['action'];
-}
-else
-{
-$request = "";
-}
+		private $routesAdmin = [
+		"indexAdminView" => ["controler"=> 'backend', "method" => 'indexAdminView'],
+		"logout" => ["controler"=> 'backend', "method" => 'logout'],
+		"addChapter" => ["controler"=> 'backend', "method" => 'addChapter'],
+		"createChapter" => ["controler"=> 'backend', "method" => 'createChapter'],
+		"addChapter" => ["controler"=> 'backend', "method" => 'addChapter'],
+		"deleteChapter" => ["controler"=> 'backend', "method" => 'deleteChapter'],
+		"rewriteChapter" => ["controler"=> 'backend', "method" => 'rewriteChapter'],
+		"editChapter" => ["controler"=> 'backend', "method" => ' editChapter'],
+		"commentAdmin" => ["controler"=> 'backend', "method" => 'commentAdmin'],
+		"removeComment" => ["controler"=> 'backend', "method" => 'removeComment'],
+		"getComment" => ["controler"=> 'backend', "method" => 'getComment'],
+		"editComment" => ["controler"=> 'backend', "method" => 'editComment']
+		];
 
-require_once('classes/Routeur.php');
 
-$routeur = new Routeur($request);
-$routeur->renderController();
 
-*/
+
+		public function __construct($request)
+		{
+		$this->request = $request;
+		}
+
+		public function renderControler(){
+		$request = $this->request;
+
+			try{
+
+				if(key_exists($request, $this->routes)){
+					$controler = $this->routes[$request]['controler'];
+					$method = $this->routes[$request]['method'];
+
+					$currentControler = new $controler();
+					$currentControler->$method();
+				}
+				elseif (key_exists($request, $this->routesAdmin)){
+					$controler = $this->routesAdmin[$request]['controler'];
+					$method = $this->routesAdmin[$request]['method'];
+
+					$currentControler = new $controler();
+					$currentControler->$method();
+				}
+			}
+		
+
+		catch(Exception $e){
+		die('error :'.$e->getMessage());
+		}
+}		

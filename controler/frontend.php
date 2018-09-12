@@ -4,8 +4,10 @@ require_once('model/ChapterManager.php');
 require_once('model/CommentManager.php');
 require_once('model/AdminManager.php');
 
-function index()
-{
+//**********************
+//gestion affichage 
+//**********************
+ function index(){
   $chapterManager = new ChapterManager();
   $lastChapters = $chapterManager->getLastChapters(3);
   $adminManager = new AdminManager();
@@ -14,14 +16,16 @@ function index()
   if (isset($_POST['login']) AND $_POST['login'] === $login AND isset($_POST['pwd']) AND password_verify($_POST['pwd'], $passHash)) {
     $_SESSION['login_admin'] = $_POST['login'];
     $_SESSION['password_admin'] = $_POST['pwd'];
-    header('Location: indexadmin.php');
+    header('Location: index.php');
   } else {
     require('view/frontend/indexView.php');
   }
 }
 
-function listChapters()
-{
+//*******************************
+//gestion chapitre et commentaires
+//********************************
+function listChapters(){
   $chapterManager = new ChapterManager();
   $chapters = $chapterManager->getChapters(0,1);
   $chaptersToLoad =$chapterManager->getNbChaptersToLoad();
@@ -31,8 +35,7 @@ function listChapters()
   require('view/frontend/listChaptersView.php');
 }
 
-function chapter($id)
-{
+function chapter($id){
   $chapterManager = new ChapterManager();
   $chapter = $chapterManager->getChapter($id);
   $commentManager = new CommentManager();
@@ -51,9 +54,13 @@ function chapter($id)
   require('view/frontend/chapterView.php');
 }
 
+
+//**********************
+//gestion contact
+//**********************
 function contact()
 {
-  unset($_SESSION['addComment']);
-  unset($_SESSION['report']);
+  unset($_SESSION['addComment']);//met à "blanc" donc à null le tableau $_SESSION en cours. 
+  unset($_SESSION['report']);///met à "blanc" donc à null le tableau $_SESSION en cours. 
   require('view/frontend/contactView.php');
 }

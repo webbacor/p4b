@@ -4,6 +4,7 @@ var divBtnMoreChaptersElt = document.getElementById('btnMoreChapters');
 var btnNavHamburgerElt = document.getElementById('nav-hamburger');
 var navElts = document.getElementsByClassName('nav');
 
+// gestionnaire événemnet clic menu hamburger
 btnNavHamburgerElt.addEventListener("click", function () {
   if (navElts[0].style.display === "") {
     navElts[0].style.display = "block";
@@ -13,9 +14,8 @@ btnNavHamburgerElt.addEventListener("click", function () {
 })
 
 
-
-var nbChaptersToLoad = 3; // Nombre de chapitres qui s'affichent lors du clic
-
+//creation objet pour Nombre de chapitres qui s'affichent 
+var nbChaptersToLoad = 3; 
 if (btnMoreChaptersElt !== null) {
   btnMoreChaptersElt.addEventListener("click", function () {
     for (var i = 0; i < nbChaptersToLoad; i++) {

@@ -12,8 +12,8 @@ try {
   if (isset($_SESSION['login']) AND isset($_SESSION['pwd'])) {
     if (isset($_GET['action'])) {
         if ($_GET['action'] == 'createChapter') {
-          // if (isset($_POST['title']) AND isset($_POST['content']) AND isset($_FILES['img_chapter'])) {
-          //  addChapter($_POST['title'], $_POST['content'], $_FILES['img_chapter']);
+          // if (isset($_POST['title']) AND isset($_POST['content'])) {
+          //  addChapter($_POST['title'], $_POST['content']);
           if (isset($_POST['title']) AND isset($_POST['content'])){
             addChapter($_POST['title'], $_POST['content']);
           } else {
@@ -25,7 +25,7 @@ try {
           }
         } elseif ($_GET['action'] == 'editChapter') {
           if (isset($_POST['title']) AND isset($_POST['content'])) {
-            //editChapter($_SESSION['idChapter'], $_POST['title'], $_POST['content'], $_FILES['img_chapter']);
+            //editChapter($_SESSION['idChapter'], $_POST['title'], $_POST['content']);
             editChapter($_SESSION['idChapter'], $_POST['title'], $_POST['content']);
           } else {
             rewriteChapter($_POST['editChapter']);

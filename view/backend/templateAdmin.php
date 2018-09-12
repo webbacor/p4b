@@ -15,25 +15,24 @@
 
 
 <header>
-        <section id="barbar">      
-           <nav class="navbar navbar-inverse">
-            <div class="container-fluid">
-             <ul id="nav-hamburger">
-                <li><i class="fa fa-bars fa-2x" style="color:white" aria-hidden="true"></i></li>
-             </ul>
-             <ul class="nav navbar-nav">
-               <li><a href="index.php" style="color:white">Accueil</a></li>
-               <li><a href="index.php?action=logout" style="color:white"> Deconnexion</a></li>
-             </ul>
-           </div>
-         </nav>
-             
+      <section id="barbar">      
+        <nav class="navbar navbar-inverse">
+          <div class="container-fluid">
+            <ul id="nav-hamburger">
+              <li><i class="fa fa-bars fa-2x" style="color:white" aria-hidden="true"></i></li>
+            </ul>
+            <ul class="nav navbar-nav">
+              <li><a href="index.php" style="color:white">Accueil</a></li>
+              <li><a href="index.php?action=logout" style="color:white"> Deconnexion</a></li>
+            </ul>
+          </div>
+        </nav>          
       </section> 
 
-        <div id="title">
-          <h1>Jean Forteroche</h1>
-          <h2>"Un billet simple pour l'Alaska"</h2>
-        </div>
+      <div id="title">
+        <h1>GESTION ADMINISTRATION</h1>
+        <h2>"Un billet simple pour l'Alaska"</h2>
+      </div>
 </header>
 
 
@@ -54,7 +53,7 @@
         tinymce.init({  // type de mode
           mode : "exact", 
           // id ou class, des textareas
-          elements : "tinymce,texte,texte2", 
+          elements : "tinymce", 
           // en mode avancé, cela permet de choisir les plugins
           theme : "advanced", 
           // langue

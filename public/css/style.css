@@ -1,9 +1,7 @@
-body
-{
+body{
   font-family: 'PT Serif', serif;
 }
-header
-{
+header{
  background: url('../images/alaska7.jpg') no-repeat center;
   height: 400px;
   width: 100%;
@@ -11,8 +9,7 @@ header
   text-align: center;
   position: relative;
 }
-#title
-{
+#title{
   position: absolute;
   display: flex;
   flex-direction: column;
@@ -42,25 +39,19 @@ header h2{
 }
 .navbar {
   background-color: #047e7e;
-
 }
-#barbar li, a
-{
+#barbar li, a{
   color: white;
 }
-.nav li
-{
+.nav li{
   margin-right: 10px;
   margin-left: 10px;
   font-size: 1.2em;
-
 }
-#nav-hamburger
-{
+#nav-hamburger{
   display: none;
 }
-#avatar-Forteroche
-{
+#avatar-Forteroche{
   background: url('../images/ecrivain.png') no-repeat top;
   background-size: cover;
   border-radius: 50%;
@@ -71,8 +62,7 @@ header h2{
   margin-top: 50px;
   margin-left: 30px;
 }
-#presentation
-{
+#presentation{
   margin-top: 50px;
   text-align: center;
 }
@@ -80,10 +70,8 @@ header h2{
   display: flex;
   flex-direction: row;
   justify-content: center;
-
 }
-#description
-{
+#description{
   font-style: italic;
   font-weight: bold;
   font-size: 1em;
@@ -91,37 +79,50 @@ header h2{
   padding-left: 20px;
   padding-right: 100px;
 }
-.chapters p
-{
+.chapters p{
   padding-left: 5px;
   padding-right: 5px;
 }
-#lastChapters
-{
+#chapter_container  h2{
+  font-size: 1.3em;
+  color: #047e7e;
+}
+#lastChapters{
   text-align: center;
   margin-top: 50px;
-  margin-bottom: 50px;
+  margin-bottom: 50px; 
+  font-size : 1.5em;
+  color: #047e7e;
+  font-weight: bold;
 }
-#lastPosts
-{
+#lastPosts{
   margin: auto;
   max-width: 1800px;
   display: flex;
   justify-content: space-around;
 }
-.postHome
-{
+#admin_container  h2{
+    color: #047e7e;
+}
+.postHome{
   border: 1px solid #c4c5ca;
   border-radius: 5px;
   text-align: center;
   max-width: 475px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
+.postHome h3{
+  font-size: 1em;
+  font-weight: bold;
+}
+
 #contact_container h1{
-  color : #0c5a65;
+  color : #047e7e;
 }
 .buttonNext
 {
-  background-color: #0c5a65;
+  background-color: #047e7e;
   color: white;
   margin-top: 10px;
   margin-bottom: 20px;
@@ -133,12 +134,12 @@ header h2{
   color: #c4c5ca;
 }
 .btn-default{
-   background-color: #0c5a65;
+   background-color: #047e7e;
    color: white;
 }
 .btn-default:hover{
    background-color: white;
-   color: #0c5a65;
+   color: #047e7e;
 }
 .ecrivain a{
     color: #ffffff;
@@ -208,7 +209,7 @@ footer
 #container  h3
 {
   font-size : 2em;
-  color: #0c5a65;
+  color: #047e7e;
   text-align: center;
   font-weight: bold;
 }
@@ -244,16 +245,7 @@ footer
 {
   border-radius: 5px;
 }
-#about
-{
-  border: 3px solid #c4c5ca;
-  border-bottom: 5px solid #222222;
-  padding-left: 25px;
-  padding-right: 25px;
-  text-align: justify;
-  padding-bottom: 25px;
-  margin-bottom: 50px;
-}
+
 #follow
 {
   border: 3px solid #c4c5ca;
@@ -326,9 +318,6 @@ footer
   max-width: 960px;
   margin: auto;
   padding: 25px;
-}
-#element{
-  background-color: white;
 }
 .comments
 {

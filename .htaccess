@@ -1,10 +1,1 @@
-Options +FollowSymlinks
-RewriteEngine on
-RewriteRule ^chapters$  index.php?action=chapters
-RewriteRule ^chapter-([0-9]+)$ index.php?action=chapters&id=$1
-RewriteRule ^contact$ index.php?action=contact
-RewriteRule ^create-chapter$ index.php?action=createChapter
-RewriteRule ^edit-chapter$ index.php?action=editChapter
-RewriteRule ^delete-chapter$ index.php?action=deleteChapter
-RewriteRule ^comment-admin$ index.php?action=commentAdmin
-RewriteRule ^edit-comment$ index.php?action=editComment [L]
+

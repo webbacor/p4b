@@ -7,7 +7,7 @@
     $request = "";
     }
 
-require_once('routeur/Routeur.php');
+require_once('Routeur/Routeur.php');
 
 $routeur = new Routeur($request);
 $routeur->renderControler();

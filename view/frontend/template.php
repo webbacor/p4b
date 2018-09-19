@@ -25,7 +25,7 @@
 
              <ul class="nav navbar-nav" >
                <li><a href="index.php" style="color:white">Accueil</a></li>
-               <li><a href="chapters" style="color:white">Chapitres</a></li>
+               <li><a href="chapter" style="color:white">Chapitres</a></li>
                <li><a href="contact" style="color:white">Contact</a></li>
                <li><a href="#" data-toggle="modal" data-target="#myModal"></span> Admin</a></li>
              </ul>

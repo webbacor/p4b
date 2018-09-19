@@ -3,6 +3,8 @@
 //Gestion des commentaires récuperation des données sur la BD
 //*************************************************
 
+require_once('Manager.php');
+
 class CommentManager extends Manager{
   
     public function getComments($idChapter)  {

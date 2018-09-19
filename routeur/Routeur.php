@@ -4,11 +4,10 @@ ini_set("SMTP","ssl:smtp.gmail.com");
 ini_set("smtp_port","465");
 ini_set('sendmail_from', 'web.bacor@gmail.com');  
 
-include_once('controler/Frontend.php');
-include_once('controler/Backend.php');
+include_once('controler/frontend.php');
+include_once('controler/backend.php');
 
-class Routeur
-{
+class Routeur{
 		private $request;
 
 
@@ -17,7 +16,6 @@ class Routeur
 		"index" => ["controler" =>'frontend',"method"=>'index'],
 		"indexView" => ["controler" =>'frontend',"method"=>'indexView'],
 		"chapter" => ["controler" =>'frontend',"method"=>'chapter'],
-		"chapters" => ["controler" =>'frontend',"method"=>'chapters'],
 		"listChapters" => ["controler" =>'frontend',"method"=>'listChapters'],
 		"contact" => ["controler" =>'frontend',"method"=>'contact'],
 		];
@@ -71,4 +69,5 @@ class Routeur
 		catch(Exception $e){
 		die('error :'.$e->getMessage());
 		}
-}		
+		}
+}

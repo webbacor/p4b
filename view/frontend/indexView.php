@@ -12,9 +12,8 @@
              J'espère que ce concept et son contenu vous plaîront, n'hésitez pas à me laisser vos avis et réactions en commentaires.
              <br/><br/>Bonne lecture et merci de l'interêt porté à mon roman.<br/></p>
             <br/>
-
   </div>
-  
+
 </div>
 
 <h2 id="lastChapters">Derniers chapitres</h2>
@@ -25,17 +24,15 @@
         $dateFormat = new DateTime($chapter['date_chapter']);
         $dateFr = $dateFormat->format('d/m/Y ');
         echo '<div class="postHome">';
-        //echo '<img src="public/images/' . $chapter['img_chapter'] . '" alt="" width="100%" height="300px">';
         echo "<h3>" . $chapter['title'] . "</h3>";
         echo '<p>  le '. $dateFr . '</p>';
         echo "<p>" . substr($chapter['content'],0,255) . "...</p>";
-        echo '<a href="chapter-' . $chapter['id'] . '"<button type="button" class="btn buttonNext">Lire la suite</button></a>';
+        echo '<a href="index.php?action=chapter'.'&id=' . $chapter['id'] . '"<button type="button" class="btn buttonNext">Lire la suite</button></a>';
         echo '</div>';
       }
     ?>
-      
+
 </div>
 
 <?php $content = ob_get_clean(); ?>
 <?php require('template.php'); ?>
-

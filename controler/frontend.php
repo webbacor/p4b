@@ -4,12 +4,14 @@ require_once('model/ChapterManager.php');
 require_once('model/CommentManager.php');
 require_once('model/AdminManager.php');
 
-class frontend {
 
-    //**********************
-    //gestion affichage 
-    //**********************
-    public function index(){
+
+class frontend {
+      //**********************
+      //gestion affichage
+      //**********************
+
+      public function index(){
       $chapterManager = new ChapterManager();
       $lastChapters = $chapterManager->getLastChapters(3);
       $adminManager = new AdminManager();
@@ -25,11 +27,11 @@ class frontend {
     }
 
     //*******************************
-    //gestion chapitre et commentaires
+    //gestion chapitres
     //********************************
     public function listChapters(){
       $chapterManager = new ChapterManager();
-      $chapters = $chapterManager->getChapters(0,4);
+      $chapters = $chapterManager->getChapters(0,1);
       $chaptersToLoad =$chapterManager->getNbChaptersToLoad();
       $countChapters = $chapterManager->getCountChapters();
       unset($_SESSION['addComment']);
@@ -37,33 +39,54 @@ class frontend {
       require('view/frontend/listChaptersView.php');
     }
 
-    public function chapter($id){
-      $chapterManager = new ChapterManager();
-      $chapter = $chapterManager->getChapter($id);
-      $commentManager = new CommentManager();
-      $comments = $commentManager->getComments($id);
-      $count = $commentManager->getCountComments($id);
-      if (isset($_POST['name']) AND isset($_POST['message'])) {
-        if (substr($_POST['name'],0,1) !== ' ' AND substr($_POST['message'],0,1) !== ' ' AND substr(nl2br($_POST['message']),0,6) !== '<br />') {
-          $commentManager->addComment($id, $_POST['name'], $_POST['message']);
-        }
-      } elseif (isset($_POST['report'])) {
-        $report = $commentManager->getReport($_POST['report']);
-        $nbReport = $report[0];
-        $nbReport++;
-        $commentManager->addReport($_POST['report'], $nbReport);
+    public function chapter()
+    {
+      if(isset($_GET['id']) && $_GET['id'] > 0 )
+      {
+        $chapterManager = new ChapterManager();
+        $chapter = $chapterManager->getChapter($_GET['id']);
+        $commentManager = new CommentManager();
+        $comments = $commentManager->getComments($_GET['id']);
+        $count = $commentManager->getCountComments($_GET['id']);
+        require('view/frontend/chapterView.php');
+      }else{
+        throw new Exception(' aucun identifiant de billet envoyé');
       }
-      require('view/frontend/chapterView.php');
     }
 
+    //*******************************
+    //gestion commentaires
+    //********************************
+
+    public function addComment(){
+  		if (isset($_GET['id']) && $_GET['id'] > 0){
+  			if (!empty($_POST['name']) && !empty($_POST['message'])){
+  					$commentManager = new CommentManager();
+  					$affectedLines = $commentManager->commentChapter($_GET['id'], htmlspecialchars($_POST['name']), nl2br(htmlspecialchars($_POST['message'])));
+						header('location: index.php?action=chapter&id=' . $_GET['id']. '#comment_container');
+  	    }else{
+        throw new Exception(' identifiant de chapitre manquant');
+        }
+      } 
+    }
+
+    public function reportComment() {
+      if (isset($_GET['id']) && $_GET['idchapter']){
+        $commentManager = new CommentManager();
+        $report = $commentManager->reportComment($_GET['id']);
+        header('location: index.php?action=chapter&id=' . $_GET['idchapter']. '#comment_container');
+      }else{
+        throw new Exception(' identifiant de chapitre manquant');
+      }
+    }
 
     //**********************
     //gestion contact
     //**********************
-    public function contact()
-    {
-      unset($_SESSION['addComment']);//met à "blanc" donc à null le tableau $_SESSION en cours. 
-      unset($_SESSION['report']);///met à "blanc" donc à null le tableau $_SESSION en cours. 
+    public function contact(){
+      unset($_SESSION['addComment']);
+      unset($_SESSION['report']);
       require('view/frontend/contactView.php');
     }
+
 }

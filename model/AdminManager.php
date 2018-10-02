@@ -2,8 +2,8 @@
 //**************************************************
 //Gestion connexion administrateur Login password récuperation des données sur la bd
 //*************************************************
-
 require_once('Manager.php');
+
 
 class AdminManager extends Manager
 {

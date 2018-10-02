@@ -29,7 +29,7 @@ $title= "Administration des commentaires"; ?>
                         <h4 class="modal-title">Supprimer un commentaire</h4>
                       </div>
                       <div style="text-align:center;" class="modal-body">
-                        <form action="index.php?action=deleteComment" method="post">
+                        <form action="delete-comment" method="post">
                           <div class="alert alert-danger">
                             <strong>Attention !</strong> Vous êtes sur le point de supprimer le commentaire. Cliquez sur le bouton pour supprimer <strong>DÉFINITIVEMENT</strong> le commentaire. (action irréversible)
                           </div>
@@ -43,7 +43,7 @@ $title= "Administration des commentaires"; ?>
                   </div>
                 </div>';
 
-          echo '<form action="edit-comment" method="post">
+          echo '<form action=edit-comment" method="post">
           <button name="editComment" value=' . $comment['id'] . ' style="margin-right:10px;" class="btn btn-default">Editer</button>
           </form>';
           echo '</div>';

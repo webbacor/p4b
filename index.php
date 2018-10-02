@@ -1,4 +1,6 @@
-<?php
+<?php 
+
+
 
     if($_GET){
         $request = $_GET['action'];
@@ -11,7 +13,5 @@ require_once('routeur/Routeur.php');
 
 $routeur = new Routeur($request);
 $routeur->renderControler();
-
-
 
 ?>

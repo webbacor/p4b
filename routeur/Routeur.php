@@ -2,41 +2,37 @@
 session_start();
 ini_set("SMTP","ssl:smtp.gmail.com");
 ini_set("smtp_port","465");
-ini_set('sendmail_from', 'web.bacor@gmail.com');  
+ini_set('sendmail_from', 'web.bacor@gmail.com');
 
 include_once('controler/frontend.php');
 include_once('controler/backend.php');
 
-class Routeur{
+class Routeur
+{
 		private $request;
 
-
 		private $routes = [
-		"" =>["controler"=>'frontend',"method"=> 'index'],
-		"index" => ["controler" =>'frontend',"method"=>'index'],
-		"indexView" => ["controler" =>'frontend',"method"=>'indexView'],
-		"chapter" => ["controler" =>'frontend',"method"=>'chapter'],
-		"listChapters" => ["controler" =>'frontend',"method"=>'listChapters'],
-		"contact" => ["controler" =>'frontend',"method"=>'contact'],
-		];
-
+		"" 				=>["controler"=>'frontend',"method"=> 'index'],
+		"index" 		=> ["controler" =>'frontend',"method"=>'index'],
+		"listChapters" 	=> ["controler" =>'frontend',"method"=>'listChapters'],
+		"chapter" 		=> ['controler' =>'frontend', "method"=>'chapter'],
+		"addComment"	=> ["controler"=> 'frontend', "method" => 'addComment'],
+		"reportComment"	=> ["controler"=> 'frontend', "method" => 'reportComment'],
+		"contact" 		=> ["controler" =>'frontend',"method"=>'contact'],
+			];
 
 		private $routesAdmin = [
-		"indexAdminView" => ["controler"=> 'backend', "method" => 'indexAdminView'],
-		"logout" => ["controler"=> 'backend', "method" => 'logout'],
-		"addChapter" => ["controler"=> 'backend', "method" => 'addChapter'],
+		"" 				=> ["controler" =>'backend',"method"=>'indexAdmin'],
+		"addChapter"	=> ["controler" =>'backend',"method"=>'addChapter'],
+		"indexAdmin" 	=> ["controler"=> 'backend', "method" => 'indexAdmin'],
 		"createChapter" => ["controler"=> 'backend', "method" => 'createChapter'],
-		"addChapter" => ["controler"=> 'backend', "method" => 'addChapter'],
-		"deleteChapter" => ["controler"=> 'backend', "method" => 'deleteChapter'],
-		"rewriteChapter" => ["controler"=> 'backend', "method" => 'rewriteChapter'],
-		"editChapter" => ["controler"=> 'backend', "method" => ' editChapter'],
-		"commentAdmin" => ["controler"=> 'backend', "method" => 'commentAdmin'],
-		"removeComment" => ["controler"=> 'backend', "method" => 'removeComment'],
-		"getComment" => ["controler"=> 'backend', "method" => 'getComment'],
-		"editComment" => ["controler"=> 'backend', "method" => 'editComment']
+		"editChapter"   => ["controler"=> 'backend', "method" => 'editChapter'],
+		"deleteChapter"=> ["controler"=> 'backend', "method" => 'deleteChapter'],
+		"commentAadmin" => ["controler"=> 'backend', "method" => 'commentAdmin'],
+		"editComment" 	=> ["controler"=> 'backend', "method" => 'editComment [L]'],
+		"editChapter"=> ["controler"=> 'backend', "method" => 'rewriteChapter'],
+		
 		];
-
-
 
 
 		public function __construct($request)
@@ -63,11 +59,15 @@ class Routeur{
 					$currentControler = new $controler();
 					$currentControler->$method();
 				}
+				else
+        		{
+              	 echo "mauvaise direction routeur";
+        		}
 			}
-		
 
-		catch(Exception $e){
-		die('error :'.$e->getMessage());
-		}
+
+			catch(Exception $e){
+			die('error :'.$e->getMessage());
+			}
 		}
 }

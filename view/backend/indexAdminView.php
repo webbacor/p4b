@@ -9,14 +9,15 @@
   <div id="chapter_admin_container">
 
     <div class="chapter_admin">
-      <a href="create-chapter"><button type="button" name="createChapter" class="btn btn-lg btn-default">Création</button></a>
+      <a href="index.php?action=createChapter"><button type="button" name="createChapter" class="btn btn-lg btn-default">Création</button></a>
       <br />
       
   </div>
 
 
  <div class="chapter_admin">  
-      <form action="edit-chapter" method="post">
+      
+        <form action="index.php?action=editChapter" method="post">
         <input type="submit" class="btn btn-lg btn-default" value="Édition">
         <br/><br />
         
@@ -34,7 +35,10 @@
  
 
   <div class="chapter_admin"> 
-      <form action="delete-chapter" method="post">
+    <form action="index.php?action=deleteChapter" method="post">
+    
+
+ 
         <button type="button" class="btn btn-lg btn-default" data-toggle="modal" data-target="#myModal">Supprimer</button>
         <br/><br />
         <select class="form-control" name="deleteChapter">
@@ -45,6 +49,9 @@
            ?>
         </select>
         <br />
+
+
+
         
         <div id="myModal" class="modal fade" role="dialog">
         <div class="modal-dialog">
@@ -59,12 +66,12 @@
               <div class="alert alert-danger">
                 <strong>Attention !</strong> Vous êtes sur le point de supprimer le chapitre selectionné. Cliquez sur le bouton pour supprimer <strong>DÉFINITIVEMENT</strong> le chapitre. (action irréversible)
               </div>
-              <input type="submit" class="btn btn-lg btn-danger" value="Supprimer">
+              <input type="submit" class="btn btn-lg btn-danger" value="Supprimer" action=''>
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-default" data-dismiss="modal">Annuler</button>
             </div>
-          </div>
+          </div><!--Fin modal-->
 
         </div>
       </div>
@@ -77,7 +84,7 @@
   <div class="comment_admin" style="margin-bottom: 100px;">
     <h4><strong>Administration des commentaires</strong></h4>
     <br/ >
-    <form action="comment-admin" method="post">
+     <form action="index.php?action=commentAdmin'.'&id=' . $chapter['id'] . '" method="post">
       <select class="form-control" name="commentAdmin">
         <?php
           foreach ($chapters3 as $chapter) {

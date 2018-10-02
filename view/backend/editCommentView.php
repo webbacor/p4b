@@ -6,9 +6,9 @@
 	  <h2 style="text-align:center;">Édition d'un commentaire</h2>
 	  <br />
 
-	  <form action="index.php?action=editComment" method="post" enctype="multipart/form-data">
+	  <form action="editComment" method="post" enctype="multipart/form-data">
 	    <br /><br />
-	    <textarea name="message" style="width:100%; height:100px;" ><?= $comment['message']; ?></textarea>
+	    <textarea id="tiny_mce" name="message" style="width:100%; height:100px;" ><?= $comment['message']; ?></textarea>
 	    <br /><br />
 
 	   

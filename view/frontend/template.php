@@ -10,6 +10,9 @@
         <link href="https://fonts.googleapis.com/css?family=Spectral+SC" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=PT+Serif" rel="stylesheet">
         <link rel="icon" type="image/png" href="public/images/favicon.png"/>
+
+        
+</head>
            
     </head>
 
@@ -25,9 +28,10 @@
 
              <ul class="nav navbar-nav" >
                <li><a href="index.php" style="color:white">Accueil</a></li>
-               <li><a href="chapter" style="color:white">Chapitres</a></li>
-               <li><a href="contact" style="color:white">Contact</a></li>
-               <li><a href="#" data-toggle="modal" data-target="#myModal"></span> Admin</a></li>
+               <li><a href="index.php?action=listChapters" style="color:white">Chapitres</a></li>
+               <li><a href="index.php?action=contact" style="color:white">Contact</a></li>
+               <li><a href="index.php?action=indexAdmin" style="color:white">sans MP</a></li>
+                <li><a href="#" data-toggle="modal" data-target="#myModal"></span> Admin</a></li>
              </ul>
         </section> 
     </div>
@@ -82,14 +86,24 @@
   <?php require ('footer.php');?>
 
    
-        <script
-			  src="https://code.jquery.com/jquery-3.2.1.min.js"
-			  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-			  crossorigin="anonymous"></script>
-
+       <script
+        src="https://code.jquery.com/jquery-3.2.1.min.js"
+        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        crossorigin="anonymous"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+        <script src="public/js/alaska.js" charset="utf-8"></script>
 
-      
+
+        <?php  
+          if (isset($_POST['login']) AND isset($_POST['pwd'])) {
+          echo '<script type="text/javascript">
+            $(document).ready(function() {
+              $("#myModal").modal("show");
+            });
+          </script>';
+        }; ?>
     </body>
 </html>
+
+   
 

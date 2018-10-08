@@ -4,9 +4,9 @@ $title= "Administration des commentaires"; ?>
 <?php ob_start(); ?>
 
 
-<h2 style="text-align:center;">Administration des commentaires</h2>
-<br />
+<h2 style="text-align:center;">Administration des commentaires</h2><br />
 <div id="commentAdmin">
+
     <?php
       $i = 0;
       foreach ($comments as $comment) {
@@ -17,13 +17,14 @@ $title= "Administration des commentaires"; ?>
 
           if ($comment['reports'] > 0) {
             echo '<div style="background-color:#DDDFEF;" class="comments">';
-          } else {
+            } else {
             echo '<div class="comments">';
-          }
-          echo '<strong>' . htmlspecialchars($comment['name']) . '</strong> le ' . $dateFr;
-          echo '<div class="btn-comments">';
-          echo '<button data-toggle="modal" data-target="#myModal' . $i . '" name="deleteComment" value=' . $comment['id'] . ' class="btn btn-default">Supprimer</button>';
-          echo '<div class="modal fade" id="myModal' . $i .'" role="dialog">
+            }
+            echo '<strong>' . htmlspecialchars($comment['name']) . '</strong> le ' . $dateFr;
+            echo '<div class="btn-comments">';
+            echo '<button data-toggle="modal" data-target="#myModal' . $i . '" name="deleteComment" value=' . $comment['id'] . ' class="btn btn-default">Supprimer</button>';
+            echo '<a href="index.php?action=indexAdmin"><button type="button" class="btn btn-default">Annuler</button></a>';   
+            echo '<div class="modal fade" id="myModal' . $i .'" role="dialog">
                   <div class="modal-dialog">
                     <!-- Modal contenue commentaires-->
                     <div class="modal-content">
@@ -46,20 +47,22 @@ $title= "Administration des commentaires"; ?>
                   </div>
                 </div>';
 
-          echo '<form action=index.php?action=editComment&amp;id=' .$comment['id'] .'" method="post">
-          <button name="editComment" value=' . $comment['id'] . ' style="margin-right:10px;" class="btn btn-default">Editer</button>
-          </form>';
-          echo '</div>';
-          echo "<br />";
-          echo nl2br($comment['message']);
-
-          echo '</div>';
-        }
+            echo '<form action=index.php?action=editComment&amp;id=' .$comment['id'] .'" method="post">
+              <button name="editComment" value=' . $comment['id'] . ' style="margin-right:10px;" class="btn btn-default">Editer</button>
+                  </form>';
+            
+            echo '</div>';
+            echo "<br />";
+            echo nl2br($comment['message']);
+            echo '</div>';
+            }
       if ($i === 0) {
-        echo '<br />';
-        echo '<h3 style="text-align:center">Aucun commentaire</h3>';
+          echo '<br />';
+          echo '<h3 style="text-align:center">Aucun commentaire
+         <a href="index.php?action=indexAdmin"><button type="button" class="btn btn-default">Accueil</button></a></h3>';
       }
     ?>
+    
 </div>
 
 <?php $content = ob_get_clean(); ?>

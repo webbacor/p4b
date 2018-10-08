@@ -1,7 +1,5 @@
 <?php 
 
-
-
     if($_GET){
         $request = $_GET['action'];
     }

@@ -54,13 +54,11 @@ header h2{
 #avatar-Forteroche{
   background: url('../images/ecrivain.png') no-repeat top;
   background-size: cover;
-  border-radius: 50%;
   width: 250px;
-  height: 250px;
+  height: 280px;
   overflow: hidden;
   margin: auto;
-  margin-top: 50px;
-  margin-left: 30px;
+  margin-top: 30px;
 }
 #presentation{
   margin-top: 50px;
@@ -70,14 +68,15 @@ header h2{
   display: flex;
   flex-direction: row;
   justify-content: center;
+  height: 400px;
 }
 #description{
   font-style: italic;
   font-weight: bold;
   font-size: 1em;
   max-width: 700px;
-  padding-left: 20px;
-  padding-right: 100px;
+  margin: auto;
+  padding-right: 50px;
 }
 .chapters p{
   padding-left: 5px;
@@ -91,7 +90,7 @@ header h2{
   text-align: center;
   margin-top: 50px;
   margin-bottom: 50px; 
-  font-size : 1.5em;
+  font-size : 2.2em;
   color: #047e7e;
   font-weight: bold;
 }
@@ -105,23 +104,24 @@ header h2{
     color: #047e7e;
 }
 .postHome{
-  border: 1px solid #c4c5ca;
-  border-radius: 5px;
+  border: 3px solid #c4c5ca;
+  border-radius: 6px;
+  box-shadow: 6px 6px 0px #d5b89a;
   text-align: center;
   max-width: 475px;
   padding-left: 10px;
   padding-right: 10px;
 }
 .postHome h3{
-  font-size: 1em;
+  font-size: 1.5em;
+  text-align: center;
   font-weight: bold;
+  color: #047e7e;
 }
-
 #contact_container h1{
   color : #047e7e;
 }
-.buttonNext
-{
+.buttonNext{
   background-color: #047e7e;
   color: white;
   margin-top: 10px;
@@ -129,8 +129,7 @@ header h2{
   width: 200px;
   height: 40px;
 }
-.btn:hover
-{
+.btn:hover{
   color: #c4c5ca;
 }
 .btn-default{
@@ -167,10 +166,8 @@ header h2{
     word-wrap: break-word;
     line-height: 40px;
 }
-footer
-{
+footer{
   max-height: 400px;
- 
   margin-top: 100px;
   color: white;
   font-family: Arial,'Spectral SC', serif;
@@ -185,36 +182,29 @@ footer
     padding-right: 30px;
     background: linear-gradient(#008080, #cb2a16);
 }
-
-}
-.social-media
-{
+.social-media{
   display: flex;
   justify-content: space-around;
   width: 150px;
 }
-.social-media a
-{
+.social-media a{
   text-decoration: none;
   color: white;
 }
-#container
-{
+#container{
   max-width: 960px;
   margin: auto;
   display: flex;
   justify-content: space-around;
   margin-top: 50px;
 }
-#container  h3
-{
+#container  h3{
   font-size : 2em;
   color: #047e7e;
   text-align: center;
   font-weight: bold;
 }
-.chapters
-{
+.chapters{
   max-width: 480px;
   margin: auto;
   margin-bottom: 50px;
@@ -223,16 +213,13 @@ footer
   border: 3px solid #c4c5ca;
   border-bottom: 5px solid #222222;
 }
-.chaptersHidden
-{
+.chaptersHidden{
   display: none;
 }
-#widget
-{
+#widget{
   max-width: 350px;
 }
-#search
-{
+#search{
   display: flex;
   padding: 25px;
   margin: auto;
@@ -241,13 +228,10 @@ footer
   align-items: center;
   margin-bottom: 50px;
 }
-#buttonSearch
-{
+#buttonSearch{
   border-radius: 5px;
 }
-
-#follow
-{
+#follow{
   border: 3px solid #c4c5ca;
   border-bottom: 5px solid #222222;
   padding-left: 25px;
@@ -255,36 +239,30 @@ footer
   padding-bottom: 25px;
   margin-bottom: 50px;
 }
-#follow a
-{
+#follow a{
   text-decoration: none;
   color: #222222;
   margin-right: 50px;
 }
-#btnMoreChapters
-{
+#btnMoreChapters{
   text-align: center;
 }
-#more_chapters
-{
+#more_chapters{
   background-color: #222222;
   color: white;
   font-size: 1.5em;
 }
-#contact_container
-{
+#contact_container{
   max-width: 500px;
   margin: auto;
   margin-top: 50px;
   padding-left: 10px;
   padding-right: 10px;
 }
-#success
-{
+#success{
   margin-top:20px;
 }
-#chapter_container
-{
+#chapter_container{
   margin: auto;
   max-width: 960px;
   text-align: justify;
@@ -293,34 +271,28 @@ footer
   border: 3px solid #c4c5ca;
   border-top: 5px solid #222222;
   box-shadow: 0px 2px 2px #c4c5ca;
-
 }
-#chapter_container h2
-{
+#chapter_container h2{
   padding-left: 25px;
   padding-right: 25px;
   text-align: center;
 }
-#p_italic
-{
+#p_italic{
   text-align: center;
   margin-bottom: 25px;
 }
-#chapter_container p
-{
+#chapter_container p{
   padding-left: 25px;
   padding-right: 25px;
   margin-bottom: 25px;
 }
-#comment_container
-{
+#comment_container{
   border-top: 5px solid #222222;
   max-width: 960px;
   margin: auto;
   padding: 25px;
 }
-.comments
-{
+.comments{
   border: 1px solid #c4c5ca;
   background-color: white;
   margin-top: 20px;
@@ -328,39 +300,32 @@ footer
   padding: 20px;
   word-wrap: break-word;
 }
-
-.date-comment
-{
+.date-comment{
   float:right;
 }
-#admin_container
-{
+#admin_container{
   text-align: center;
   margin-top: 50px;
 }
-#chapter_admin_container
-{
+#chapter_admin_container{
   display: flex;
   justify-content: space-around;
   margin: auto;
   max-width: 1600px;
 }
-.chapter_admin
-{
+.chapter_admin{
   border: 1px solid #c4c5ca;
   width: 500px;
   margin-top: 50px;
   padding: 10px;
   border-radius: 5px;
 }
-#createChapter, #editChapter
-{
+#createChapter, #editChapter{
   max-width: 960px;
   margin: auto;
   padding: 5px;
 }
-.comment_admin
-{
+.comment_admin{
   border: 1px solid #c4c5ca;
   max-width: 500px;
   padding: 10px;
@@ -368,30 +333,23 @@ footer
   margin: auto;
   margin-top: 50px;
 }
-#commentAdmin
-{
+#commentAdmin{
   max-width: 960px;
   margin: auto;
   min-height: 200px;
   padding: 5px;
 }
-.btn-comments
-{
+.btn-comments{
   margin-top: 10px;
   display: flex;
   flex-direction: row-reverse;
 }
- #tiny_mce_toolbargroup_voice{
-      display:flex;
-      flex-direction: column;
-      
-      width: 100% !important;
-      height: auto;
-
-    }
-
-    
+#tinyMCE textarea, #tiny_mce_parent{
+     width: 500px;
+     height: auto;
 }
+  
+
 
 /*===responsive===*/
 @media screen and (max-width: 1200px) {
@@ -399,24 +357,27 @@ footer
     {
       max-width: 350px;
     }
-  }
+}
+
 @media screen and (max-width: 992px) {
-    #lastPosts
-    {
+    #lastPosts{
       flex-direction: column;
       align-items: center;
       padding-left: 10px;
       padding-right: 10px;
     }
-    .postHome
-    {
+    .postHome{
       margin-bottom: 50px;
       max-width: 475px;
     }
- }
+    #avatar-Forteroche{
+     width: 200px;
+      height: auto;
+    }
+}
+
 @media screen and (max-width: 768px) {
-    .nav
-    {
+    .nav{
       display: flex;
     }
     header h1{
@@ -425,86 +386,103 @@ footer
     header h2{
     font-size: 2em;
     }
-    #container
-    {
+    #container{
       display: flex;
       flex-direction: column;
       padding-left: 10px;
       padding-right: 10px;
     }
-    #widget
-    {
+    #widget{
       display: none;
     }
-    #chapter_container
-    {
+    #chapter_container{
       margin-left: 10px;
       margin-right: 10px;
     }
-    #admin_container
-    {
+    #admin_container{
       padding-left: 10px;
       padding-right: 10px;
     }
-    #chapter_admin_container
-    {
+    #chapter_admin_container{
       flex-direction: column;
       align-items: center;
     }
-    .chapter_admin
-    {
+    .chapter_admin{
       max-width: 100%;
     }
-   #tiny_mce_toolbargroup_voice{
-      display:flex;
-      flex-direction: column;
-      
-      width: 500px !important;
-      height: auto;
-
-    }
-
-    
-
+    #title h3{
+      margin-top: 50px;
+    } 
+    .tinyMCE textarea{
+     width: 70% !important;
+     height: auto !important;
+  }
 }
+
 @media screen and (max-width: 576px) {
-  .navbar
-  {
-    position: relative;
-  }
-  #nav-hamburger
-  {
-    display: inline-block;
-    display: flex;
-    align-items: center;
-    list-style-type: none;
-    position: absolute;
-    right: 0;
-    margin-right: 5px;
-    padding: 10px;
-    cursor: pointer;
-  }
-  .nav
-  {
+    .navbar  {
+      position: relative;
+    }
+    #nav-hamburger  {
+      display: inline-block;
+      display: flex;
+      align-items: center;
+      list-style-type: none;
+      position: absolute;
+      right: 0;
+      margin-right: 5px;
+      padding: 10px;
+      cursor: pointer;
+    }
+    .nav  {
+      display: none;
+    }
+    .date-comment {
+      float: none;
+    }
+    header h1{
+    font-size : 3em;
+    }
+    header h2{
+    font-size: 2em;
+    }
+    #avatar-Forteroche{
     display: none;
-  }
-  .date-comment
-  {
-    float: none;
-  }
-  header h1{
-  font-size : 3em;
-  }
-  header h2{
-  font-size: 2em;
-  }
-  #avatar-Forteroche{
-  display: none;
-  }
-  .sigNature img{
-    width: 150px;
-    height: auto;
-  }
+    }
+    .sigNature img{
+      width: 150px;
+      height: auto;
+    }  
+    #description{
+      padding-left: 10px;
+    } 
+}
+
+/*============================ TINY MCE RESPONSIVE=============================*/
+
+table.mceLayout, textarea.tinyMCE {
+     width: 100% !important;
+     height: auto !important;
+}
+
+/* make the toolbar wrap */
+.mceToolbar td {
+     display:table-row;
+     float: left;
+}
+.mceToolbar td:nth-of-type(11){
+     clear: left;
+}
+
+@media only screen and (min-width: 600px) {
+     /* remove the toolbar wrap */
+     .mceToolbar td {
+         display:table-cell;
+         float: none;
+     }
+     mceToolbar td:nth-of-type(11){
+         clear: none;
+     }
 }
    
  

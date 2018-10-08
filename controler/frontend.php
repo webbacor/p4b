@@ -39,8 +39,7 @@ class frontend {
       require('view/frontend/listChaptersView.php');
     }
 
-    public function chapter()
-    {
+    public function chapter(){
       if(isset($_GET['id']) && $_GET['id'] > 0 )
       {
         $chapterManager = new ChapterManager();

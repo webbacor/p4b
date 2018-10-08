@@ -24,22 +24,16 @@ class backend {
     }
 
     //******************
-    //Gestion chapitre
+    //Gestion chapitres
     //******************
-    function addChapter(){
-      $chapterManager = new ChapterManager();
-      $chapters = $chapterManager->createChapter($_POST['content'], $_POST['title']);
-      header('Location: index.php?action=indexAdmin');
-    }
-
+   
     function createChapter(){
     require('view/backend/addChapterView.php');
     }
-
-    function deleteChapter(){
-      $id = $_POST['deleteChapter'];
+ 
+    function addChapter(){
       $chapterManager = new ChapterManager();
-      $chapterManager->deleteChapter($id);
+      $chapters = $chapterManager->createChapter($_POST['content'], $_POST['title']);
       header('Location: index.php?action=indexAdmin');
     }
 
@@ -55,7 +49,14 @@ class backend {
      $chapterManager = new ChapterManager();
      $chapterManager->editChapter($id, $_POST['content'], $_POST['title']);
      header('Location: index.php?action=indexAdmin');
-     }
+     } 
+
+     function deleteChapter(){
+      $id = $_POST['deleteChapter'];
+      $chapterManager = new ChapterManager();
+      $chapterManager->deleteChapter($id);
+      header('Location: index.php?action=indexAdmin');
+    }
 
     //*********************
     //Gestion commentaires
@@ -63,27 +64,17 @@ class backend {
 
     function commentAdmin(){
       if (!empty ($_POST['commentAdmin'])){
-
         $idChapter = $_POST['commentAdmin'];
       }
          else {
-
           $idChapter = $_SESSION['idChapter'];
-        }
-
+         }
       $commentManager = new CommentManager();
       $comments = $commentManager->getComments($idChapter);
       $_SESSION['idChapter'] = $idChapter;
       require('view/backend/commentAdminView.php');
     }
-
-    function removeComment(){
-      $idComment = $_POST['deleteComment'];
-      $commentManager = new CommentManager();
-      $commentManager->deleteComment($idComment);
-      header('Location: index.php?action=commentAdmin');
-    }
-
+    
     function editComment(){
       $idComment = $_POST['editComment'];
       $commentManager = new CommentManager();
@@ -94,6 +85,13 @@ class backend {
     function rewriteComment() {
       $commentManager = new CommentManager();
       $commentManager->editComment($_GET['id'],($_POST['message']));
+      header('Location: index.php?action=commentAdmin');
+    }
+
+    function removeComment(){
+      $idComment = $_POST['deleteComment'];
+      $commentManager = new CommentManager();
+      $commentManager->deleteComment($idComment);
       header('Location: index.php?action=commentAdmin');
     }
 

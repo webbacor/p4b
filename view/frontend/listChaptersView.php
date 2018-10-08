@@ -11,18 +11,17 @@
         if ($nbChaptersLoad < $chaptersToLoad) {
           $nbChaptersLoad++;
           echo '<div class="chapters">';
-        } else {
+          } else {
           echo '<div class="chapters chaptersHidden">';
-        }
-        echo '<h3>' . $chapter['title'] . '</h3>';
-        echo '<p>Écrit le '. $dateFr . '</p>';
-        echo "<p>" . substr($chapter['content'],0,255) . "...</p>";
-        echo '<a href="index.php?action=chapter'.'&id=' . $chapter['id'] . '"<button type="button" class="btn buttonNext">Lire la suite</button></a>';
-        echo '</div>';
+          }
+          echo '<h3>' . $chapter['title'] . '</h3>';
+          echo '<p>Écrit le '. $dateFr . '</p>';
+          echo "<p>" . substr($chapter['content'],0,255) . "...</p>";
+          echo '<a href="index.php?action=chapter'.'&id=' . $chapter['id'] . '"<button type="button" class="btn buttonNext">Lire la suite</button></a>';
+          echo '</div>';
       }
     ?>
   </div>
-
 </div>
 
     <?php

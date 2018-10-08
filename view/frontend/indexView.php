@@ -3,17 +3,13 @@
 <!-- pour faire un header(); en plein milieu de ta page qui contient du html-->
 
 <div id="Forteroche">
-<div id="avatar-Forteroche"></div>
+  <div id="avatar-Forteroche"></div>
   <div id="presentation">
-  <p id="description"><span>Mon Roman en ligne</span><br/><br/>
-
+    <p id="description"><span>Mon Roman en ligne</span><br/><br/>
              Bienvenue sur le site de mon roman en ligne,c'est un nouveau concept que je mets en pratique, je posterai à intervales réguliers les épisodes de mon nouveau roman intitulé "Billet simple pour l'Alaska".<br/><br/>
-
              J'espère que ce concept et son contenu vous plaîront, n'hésitez pas à me laisser vos avis et réactions en commentaires.
-             <br/><br/>Bonne lecture et merci de l'interêt porté à mon roman.<br/></p>
-            <br/>
+             <br/><br/>Bonne lecture et merci de l'interêt porté à mon roman.<br/></p><br/>
   </div>
-
 </div>
 
 <h2 id="lastChapters">Derniers chapitres</h2>
@@ -31,7 +27,6 @@
         echo '</div>';
       }
     ?>
-
 </div>
 
 <?php $content = ob_get_clean(); ?>

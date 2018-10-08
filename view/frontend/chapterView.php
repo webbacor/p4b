@@ -8,11 +8,9 @@
       <p> <?= $chapter['content']; ?></p>
 </div>
 
-
 <!--affiche les commentaires -->
 <div id="comment_container">
   <h2>Commentaires (<?= $count ?>)</h2>
-
     <form action="index.php?action=addComment&amp;id=<?= $_GET['id']; ?>" method="post">
         <div class="form-group">
            <label for="name">Nom :</label>
@@ -22,8 +20,8 @@
            <label for="message">Votre message :</label>
            <textarea style="resize:none" name="message" class="form-control" rows="5" required></textarea>
         </div>
-            <button type="submit" class="btn btn-default">Envoyer</button>
-    </form>
+           <button type="submit" class="btn btn-default">Envoyer</button>
+    </form>  
  
   <?php while($data = $comments->fetch()):?>
   
